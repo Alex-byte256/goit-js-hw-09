@@ -26,7 +26,7 @@ ref.formEl.addEventListener('submit', event => {
   const step = Number(formElements.step.value);
   const amount = Number(formElements.amount.value);
 
-  for (i = 1; i <= amount; i++) {
+  for (let i = 1; i <= amount; i++) {
     createPromise(i, delay)
       .then(res => Notify.success(res))
       .catch(rej => Notify.failure(rej));
