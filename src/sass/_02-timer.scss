@@ -25,7 +25,7 @@
   }
 }
 
-[data-start]:disabled {
+#datetime-picker + [data-start]:disabled {
   background-color: rgb(247, 10, 10);
 }
 
