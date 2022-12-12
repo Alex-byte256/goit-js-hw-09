@@ -68,7 +68,11 @@ function setTimeEl(dateObj) {
 refs.startBtn.addEventListener('click', () => {
   refs.timerNumber.forEach(num => (num.style.color = 'yellow'));
   refs.startBtn.setAttribute('disabled', '');
-  setInterval(() => {
+  const index = setInterval(() => {
+    if (dateInputMl < 1000) {
+      clearInterval(index);
+      return;
+    }
     dateInputMl -= 1000;
     setTimeEl(convertMs(dateInputMl));
   }, 1000);
